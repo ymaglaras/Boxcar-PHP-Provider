@@ -84,12 +84,12 @@ class boxcar_api {
 	 * @return bool 
 	 */
 	public function invite ($email) {
-		$result = $this->http_post('subscribe', array('email' => md5($email)));
+		$result = $this->http_post('notifications/subscribe', array('email' => md5($email)));
 		
 		if ($result['http_code'] === 404) {
 			throw new boxcar_exception('User not found', $result['http_code']);
 		} else {
-			return $this->default_response_hander($result);
+			return $this->default_response_handler($result);
 		}
 	}
 	
