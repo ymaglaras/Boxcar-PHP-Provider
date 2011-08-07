@@ -108,7 +108,7 @@ class boxcar_api {
 	 * @param string $icon  Optional; This is the URL of the icon that will be shown to the user. Standard size is 57x57.
 	 */
 	public function notify ($email, $name, $message, $id = null, $payload = null, $source_url = null, $icon = null) {
-		return $this->do_notify('notifications/broadcast', $email, $name, $message, $id, $payload, $source_url, $icon);
+		return $this->do_notify('notifications', $email, $name, $message, $id, $payload, $source_url, $icon);
 	}
 	
 	/**
